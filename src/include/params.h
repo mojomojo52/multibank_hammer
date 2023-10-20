@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2018 Vrije Universiteit Amsterdam
+ * Copyright (c) 2023 Ingab Kang
+ *
+ * This program is licensed under the GPL2+.
+ */
+
 #ifndef PARAMS_H
 #define PARAMS_H 1
 
