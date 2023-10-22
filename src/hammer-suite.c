@@ -650,20 +650,18 @@ int mem_check(SessionConfig *cfg, MemoryBuffer *memory)
 							h_patt.d_lst = (DRAMAddr *)malloc(sizeof(DRAMAddr) * h_patt.len);
 							h_patt.v_baselst = (char **)malloc(sizeof(char *) * h_patt.len);
 
-							fprintf(stderr, "num_banks: %d sh_num_banks: %d offset: %d offset_bk: %d sh_len: %d\n", num_banks, sh_num_banks, offset, offset_bk, sh_len);
+							//fprintf(stderr, "num_banks: %d sh_num_banks: %d offset: %d offset_bk: %d sh_len: %d\n", num_banks, sh_num_banks, offset, offset_bk, sh_len);
 
-							fprintf(stderr, "idx: ");
 							for (int i = 0; i < h_patt.len; i++)
 							{
 								int idx = (i / num_banks) * sh_num_banks + i % num_banks + offset_bk;
-								fprintf(stderr, "%d ", idx);
 								assert(idx < sh_len);
 								// add to h_patt
 								h_patt.d_lst[i] = sh_agg_d[idx];
 								h_patt.v_baselst[i] = sh_base_v[idx];
 							}
 							fprintf(stderr, "\n");
-							fprintf(stderr, "[HAMMER] - %s: ", hPatt_2_str_thp(&h_patt, ALL_FIELDS));
+							fprintf(stderr, "[HAMMER] - %s: \n", hPatt_2_str_thp(&h_patt, ALL_FIELDS));
 
 							// SCAN FLUSHLESS
 							int unroll_list[8] = {1, 2, 4, 5, 8, 10, 20, 40};
@@ -843,13 +841,11 @@ int mem_check_1GB(SessionConfig *cfg, MemoryBuffer *memory)
 						h_patt.d_lst = (DRAMAddr *)malloc(sizeof(DRAMAddr) * h_patt.len);
 						h_patt.v_baselst = (char **)malloc(sizeof(char *) * h_patt.len);
 
-						fprintf(stderr, "num_banks: %d sh_num_banks: %d offset: %d offset_bk: %d sh_len: %d\n", num_banks, sh_num_banks, offset, offset_bk, sh_len);
+						//fprintf(stderr, "num_banks: %d sh_num_banks: %d offset: %d offset_bk: %d sh_len: %d\n", num_banks, sh_num_banks, offset, offset_bk, sh_len);
 
-						fprintf(stderr, "idx: ");
 						for (int i = 0; i < h_patt.len; i++)
 						{
 							int idx = (i / num_banks) * sh_num_banks + i % num_banks + offset_bk;
-							fprintf(stderr, "%d ", idx);
 							assert(idx < sh_len);
 							// add to h_patt
 							h_patt.d_lst[i] = sh_agg_d[idx];
