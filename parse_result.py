@@ -28,11 +28,11 @@ class pattern:
     def print_data(self, verbose):
         if verbose:
             if self.aggs / self.banks == 10:
-                mark10 = " <- 10 aggs/bank"
+                mark10 = ""
             else:
                 mark10 = ""
             print(
-            "evsets: ", self.name.ljust(15),
+            "evsets: ", self.name.strip().ljust(7),
             "%2d"%self.num_ev,
             "bias: ", self.bias,
             "banks: ", "%2d"%self.banks,
@@ -48,7 +48,7 @@ class pattern:
             )
         else:
             print(
-            self.name.ljust(15),
+            self.name.strip().ljust(7),
             "%2d"%self.num_ev,
             self.bias,
             "%2d"%self.banks,

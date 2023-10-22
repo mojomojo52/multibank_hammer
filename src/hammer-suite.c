@@ -710,7 +710,7 @@ int mem_check(SessionConfig *cfg, MemoryBuffer *memory)
 										}
 									}
 
-									fprintf(stderr, ": %lu/%lu \n", time / 1000000, time / acts);
+									//fprintf(stderr, ": %lu/%lu \n", time / 1000000, time / acts);
 									fprintf(out_fd, ": %lu/%lu \n", time / 1000000, time / acts);
 									fflush(out_fd);
 								}
