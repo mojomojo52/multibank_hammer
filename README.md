@@ -18,5 +18,5 @@ python3 -v ./parse_result.py ./data/file_name
 ```
 Is used to parse the flip information output data.
 
-Built base on:
+Built based on:
 [1] "https://github.com/vusec/trrespass"
